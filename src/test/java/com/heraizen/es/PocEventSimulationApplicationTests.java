@@ -1,5 +1,7 @@
 package com.heraizen.es;
 
+import static org.assertj.core.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,14 +14,15 @@ class PocEventSimulationApplicationTests {
 
 	@Autowired
 	private ServiceUtil ServiceUtil;
+
 	@Test
 	void contextLoads() {
 	}
-	
+
 	@Test
 	void loadUtilData() {
-			Service service = ServiceUtil.getService();
-			System.out.println(service);
+		Service service = ServiceUtil.getService();
+		System.out.println(service.getRateTable().size());
 	}
 
 }
