@@ -17,7 +17,7 @@ public class Picklist {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String label;
+    private String name;
     private String value;
     @ManyToOne
     @JoinColumn(name = "service_dimenstion_id",referencedColumnName = "id")    
