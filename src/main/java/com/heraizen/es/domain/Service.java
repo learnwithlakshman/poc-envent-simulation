@@ -10,9 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+@Data
 @Entity
 @Getter
 @Setter
@@ -23,12 +25,11 @@ public class Service {
         private String name;
         private String description;
         private String strFormula;
-        private List<Rate> rateTable;
-       
-        @OneToMany(cascade = CascadeType.ALL,mappedBy = "service")
+              
+        @OneToMany(cascade = CascadeType.ALL, mappedBy = "service")
         private List<ServiceDimenstion> serviceDimenstions=new ArrayList<>();
 
-        public void addService(ServiceDimenstion serviceDimenstion){
+        public void addDimenstion(ServiceDimenstion serviceDimenstion){
             this.serviceDimenstions.add(serviceDimenstion);
         }
 }

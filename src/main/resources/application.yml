@@ -21,6 +21,17 @@ servicedata:
         -
          name: billions
          value: 10000000
+      rateTable:
+        -
+         priceMethod: TIERED
+         maxValue: 1
+         minValue: 300000000
+         unitPrice: 0.000001
+        -
+         priceMethod: TIERED
+         maxValue: 300000000
+         minValue: 1000000000
+         unitPrice: 0.0000009
     -
       name: period
       dimenstionType: PICKLIST
@@ -41,7 +52,7 @@ servicedata:
          name: per month
          value: 1
     -  
-     name: sizeunit
+     name: sizebytes
      dimenstionType: PICKLIST
      picklist:
        -
@@ -54,31 +65,26 @@ servicedata:
         name: mb
         value: 1024
     -  
-     name: sizeunit
+     name: requests
      dimenstionType: INPUT
     -  
-     name: sizebytes
+     name: sizeunit
      dimenstionType: INPUT
-  rateTable: 
+  
+eventdata:
+   eventList:
     - 
-      frequency: ""
-      id: "30001"
-      maxCharge: ""
-      maxQuantity: "300000000"
-      minCharge: ""
-      minQuantity: "1"
-      priceMethod: TIER
-      svcCode: "1000"
-      svcDimensionName: request_unit
-      unitPrice: "0.000001"
-    - 
-      frequency: ""
-      id: "30002"
-      maxCharge: ""
-      maxQuantity: "1000000000"
-      minCharge: ""
-      minQuantity: "300000000"
-      priceMethod: TIER
-      svcCode: "1000"
-      svcDimensionName: request_unit
-      unitPrice: "0.0000009"
+     name: request_unit
+     value: 1
+    -
+     name: period
+     value: 1
+    -
+     name: requests
+     value: 1000
+    -
+     name: sizeunit
+     value: 1000
+    -
+     name: sizebytes
+     value: 1

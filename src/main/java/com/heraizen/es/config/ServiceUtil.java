@@ -11,7 +11,5 @@ import lombok.Data;
 @Configuration
 @ConfigurationProperties(prefix = "servicedata")
 public class ServiceUtil {
-
-		
-		private Service service;
+	private Service service;
 }
