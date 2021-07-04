@@ -22,6 +22,7 @@ public class Service {
         private Long id;
         private String name;
         private String description;
+        private String strFormula;
         
         @OneToMany(cascade = CascadeType.ALL,mappedBy = "service")
         private List<ServiceDimenstion> serviceDimenstions=new ArrayList<>();
